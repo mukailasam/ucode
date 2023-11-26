@@ -15,6 +15,13 @@ func main() {
 
 	flag.Parse()
 
+	args := os.Args[:]
+
+	if len(args) <= 1 {
+		flag.Usage()
+		return
+	}
+
 	if os.Args[1] == "-e" {
 		res := URLEncode(*arg1)
 		fmt.Println("URL Encode:", res)
